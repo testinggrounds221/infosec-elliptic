@@ -19,7 +19,6 @@ class Point {
 		this.x = x;
 		this.y = y;
 		this.curve = curve
-		// ZERO = new Point(0n, 0n, curve)
 	}
 	multiplyDA(n) {
 		n = BigInt(n)
@@ -73,7 +72,6 @@ function invert(number, modulo = this.curve.P) {
 	if (number === 0n || modulo <= 0n) {
 		throw new Error(`invert positive integers, got n=${number} mod=${modulo}`);
 	}
-	// Eucledian GCD httpsbrilliant.org/wiki/extended-euclidean-algorithm/
 	let a = mod(number, modulo);
 	let b = modulo;
 	let [x, y, u, v] = [0n, 1n, 1n, 0n];
@@ -107,7 +105,7 @@ function get_curve() {
 
 function do_alice_pub() {
 	if (document.ecdhtest.alice_priv.value.length == 0) {
-		alert("Please generate Alice's private value first");
+		alert("Please generate A's private value first");
 		return;
 	}
 	var curve = get_curve();
@@ -123,7 +121,7 @@ function do_alice_pub() {
 
 function do_bob_pub() {
 	if (document.ecdhtest.bob_priv.value.length == 0) {
-		alert("Please generate Alice's private value first");
+		alert("Please generate A's private value first");
 		return;
 	}
 	var curve = get_curve();
@@ -139,11 +137,11 @@ function do_bob_pub() {
 
 function do_alice_key() {
 	if (document.ecdhtest.alice_priv.value.length == 0) {
-		alert("Please generate Alice's private value first");
+		alert("Please generate A's private value first");
 		return;
 	}
 	if (document.ecdhtest.bob_pub_x.value.length == 0) {
-		alert("Please compute Bob's public value first");
+		alert("Please compute B's public value first");
 		return;
 	}
 	var curve = get_curve();
@@ -157,11 +155,11 @@ function do_alice_key() {
 
 function do_bob_key() {
 	if (document.ecdhtest.bob_priv.value.length == 0) {
-		alert("Please generate Bob's private value first");
+		alert("Please generate B's private value first");
 		return;
 	}
 	if (document.ecdhtest.alice_pub_x.value.length == 0) {
-		alert("Please compute Alice's public value first");
+		alert("Please compute A's public value first");
 		return;
 	}
 
