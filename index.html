@@ -1,0 +1,111 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>JavaScript ECDH Key Exchange Demo</title>
+  </head>
+  <script src="code.js"></script>
+  <body>
+    <h1>Elliptic Curve Info Sec</h1>
+
+    <form name="ecdhtest" onsubmit="return false;">
+      <h2>Elliptic Curve parameters</h2>
+
+      <p>
+        Equation Coefficient A:<br />
+        <input name="a" type="text" size="100" value="1" /><br />
+        Equation Coefficient B:<br />
+        <input name="b" type="text" size="100" value="0" />
+      </p>
+      <p>
+        G (X,Y):<br />
+        <input name="gx" type="text" size="100" value="4" /><br />
+        <input name="gy" type="text" size="100" value="9" />
+      </p>
+      <p>
+        N:<br />
+        <input name="n" type="text" size="100" value="13" />
+      </p>
+      <table>
+        <tbody>
+          <tr>
+            <th>A</th>
+            <th>B</th>
+          </tr>
+          <tr>
+            <td>
+              A's private value<br />
+              <input name="alice_priv" type="text" value="" size="80" /><br />
+              <p>
+                A's public point<br />
+                <input
+                  name="alice_pub_x"
+                  type="text"
+                  value=""
+                  size="80"
+                /><br />
+                <input
+                  name="alice_pub_y"
+                  type="text"
+                  value=""
+                  size="80"
+                /><br />
+                <input
+                  type="button"
+                  value="Calculate public"
+                  onclick="do_alice_pub();"
+                />
+              </p>
+              <p>
+                A's secret key (X,Y):<br />
+                <input
+                  name="alice_key_x"
+                  type="text"
+                  value=""
+                  size="80"
+                /><br />
+                <input
+                  name="alice_key_y"
+                  type="text"
+                  value=""
+                  size="80"
+                /><br />
+                <input
+                  type="button"
+                  value="Calculate secret"
+                  onclick="do_alice_key();"
+                />
+              </p>
+            </td>
+            <td>
+              B's private value<br />
+              <input name="bob_priv" type="text" value="" size="80" /><br />
+              <p>
+                B's public point<br />
+                <input name="bob_pub_x" type="text" value="" size="80" /><br />
+                <input name="bob_pub_y" type="text" value="" size="80" /><br />
+                <input
+                  type="button"
+                  value="Calculate public"
+                  onclick="do_bob_pub();"
+                />
+              </p>
+              <p>
+                B's secret key<br />
+                <input name="bob_key_x" type="text" value="" size="80" /><br />
+                <input name="bob_key_y" type="text" value="" size="80" /><br />
+                <input
+                  type="button"
+                  value="Calculate secret"
+                  onclick="do_bob_key();"
+                />
+              </p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <p></p>
+    </form>
+    <hr />
+  </body>
+  <script></script>
+</html>
