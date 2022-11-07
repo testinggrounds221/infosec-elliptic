@@ -70,7 +70,8 @@ function mod(a, b = this.curve.P) {
 // Inverses number over modulo
 function invert(number, modulo = this.curve.P) {
 	if (number === 0n || modulo <= 0n) {
-		throw new Error(`invert positive integers, got n=${number} mod=${modulo}`);
+		alert("Choose valid Parameters." + `Invert positive integers, got n=${number} mod=${modulo}`)
+
 	}
 	let a = mod(number, modulo);
 	let b = modulo;
